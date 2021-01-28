@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 //criar pros 4 lados
 if(mae){
 	if(potencia > 0){
@@ -15,7 +12,6 @@ if(mae){
 			sentido += 90
 		}
 	}
-
 }else{
 	//so cria para o sentido que foi criado
 	if(potencia-- > 0){
@@ -27,6 +23,5 @@ if(mae){
 		filha.mae = false
 		filha.sentido = sentido
 		filha.potencia = potencia
-
 	}
 }
