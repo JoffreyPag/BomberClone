@@ -1,32 +1,28 @@
 /// @description gerando o mapa
-var grid_size = 32
+grid_size = 32
 var largura_sala = room_width
 var altura_sala = room_height
-var xx = 0
-var yy = 0
 
-//geração da linha superior
-while(xx <= largura_sala){
-	var bloco = instance_create_layer(xx, 0, "Level", obj_bloco)
-	bloco.destroi = false
-	
-	xx+=grid_size
+for(var i=0; i<largura_sala; i+=grid_size){
+	for(var j=0; j<altura_sala; j+=grid_size){
+		if(j == 0 or j == altura_sala-grid_size or 
+			i == 0 or i==altura_sala-grid_size){
+			var bloco = instance_create_layer(i,j, "Level", obj_bloco)
+			bloco.destroi = false
+		}
+		//primeiro player
+		if!(
+			((i == grid_size and j == grid_size) or (i == grid_size*2 and j == grid_size) or (i == grid_size and j == grid_size*2)) or
+			((i==largura_sala-(grid_size*3) and j == grid_size) or (i == largura_sala-(grid_size*2) and j == grid_size) or (i == largura_sala-(grid_size*2) and j==grid_size*2)) or
+			((i == grid_size and j == largura_sala-(grid_size*2)) or (i == grid_size and j == altura_sala-(grid_size*3)) or (i == grid_size*2 and j == largura_sala-(grid_size*2))) or 
+			((i == largura_sala-(grid_size*2) and j == altura_sala-(grid_size*2)) or (i == largura_sala-(grid_size*2) and j == altura_sala-(grid_size*3)) or (i == largura_sala-(grid_size*3) and j == altura_sala-(grid_size*2)))
+			){
+			var bloco = instance_create_layer(i,j, "Level", obj_bloco)
+		}
+		
+	}
 }
-//coluna da esq
-while(yy <= altura_sala){
-	var bloco = instance_create_layer(0, yy, "Level", obj_bloco)
-	bloco.destroi = false
-	yy+=grid_size
-}
-//linha inferior
-while(xx >= 0){
-	var bloco = instance_create_layer(xx, altura_sala-grid_size, "Level", obj_bloco)
-	bloco.destroi = false
-	xx-=grid_size
-}
-//linha da direita
-while(yy >= 0){
-	var bloco = instance_create_layer(largura_sala-grid_size, yy, "Level", obj_bloco)
-	bloco.destroi = false
-	yy-=grid_size
+
+if(!instance_exists(obj_player)){
+	instance_create_layer(grid_size, grid_size, "Player", obj_player)
 }

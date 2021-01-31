@@ -1,5 +1,4 @@
 /// @description desenhando grid do jogo
-draw_self()
 
 var col = room_width div grid_size
 var lin = room_height div grid_size
