@@ -1,4 +1,4 @@
-//instance_destroy()
+instance_destroy()
 switch(ind){
 	case 0:
 		other.bombas++

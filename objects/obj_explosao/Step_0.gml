@@ -32,9 +32,3 @@ if(instance_place(x,y,obj_player)){
 	game_restart()
 }
 
-//colidindo com o power up
-var colpwrup = instance_place(x,y,obj_power_up)
-if(colpwrup){
-	instance_destroy(colpwrup)
-}
-

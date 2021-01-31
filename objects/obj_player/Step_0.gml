@@ -25,7 +25,7 @@ solta_bomba = keyboard_check_released(vk_space)
 if(solta_bomba && bombas > 0){
 	var bomba = instance_create_layer((round(x) div grid_size)*grid_size,
 							(round(y) div grid_size)*grid_size, 
-							"Instances", obj_bomba);
+							"Level", obj_bomba);
 	bomba.potencia = potencia
 	bomba.pai = self
 	bombas--

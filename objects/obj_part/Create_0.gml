@@ -1,6 +1,6 @@
 //criando o sistema de particula
 global.part_sys = part_system_create()
-part_system_depth(global.part_sys, -1000)
+part_system_layer(global.part_sys, "Efeitos")
 
 global.particula = part_type_create()
 

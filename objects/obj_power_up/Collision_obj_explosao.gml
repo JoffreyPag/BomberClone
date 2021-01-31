@@ -1,0 +1,1 @@
+if(destroi) instance_destroy()
