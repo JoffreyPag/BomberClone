@@ -11,10 +11,11 @@ if(mae){
 			filha.potencia = potencia
 			sentido += 90
 		}
+		potencia --
 	}
 }else{
 	//so cria para o sentido que foi criado
-	if(potencia-- > 0){
+	if(--potencia > 0){
 		//criando as proximas explosoes
 		var xx = lengthdir_x(grid_size, sentido)
 		var yy = lengthdir_y(grid_size, sentido)

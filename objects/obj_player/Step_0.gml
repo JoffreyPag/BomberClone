@@ -1,4 +1,6 @@
-var up, down, left, right, bomba
+var up, down, left, right, solta_bomba
+
+if(vel>4) vel = 4
 
 //movimentação em grid
 //checando se o x e y sao multiplos de 32
@@ -18,14 +20,14 @@ if(round(x) mod grid_size == 0 and round(y) mod grid_size == 0){
 	
 }
 
-bomba = keyboard_check_released(vk_space)
+solta_bomba = keyboard_check_released(vk_space)
 
-if(bomba && bombas > 0){
-	var bomb = instance_create_layer((round(x) div grid_size)*grid_size,
+if(solta_bomba && bombas > 0){
+	var bomba = instance_create_layer((round(x) div grid_size)*grid_size,
 							(round(y) div grid_size)*grid_size, 
 							"Instances", obj_bomba);
-	bomb.potencia = potencia
-	bomb.pai = self
+	bomba.potencia = potencia
+	bomba.pai = self
 	bombas--
 }
 
@@ -43,6 +45,16 @@ if(place_meeting(x+sign(velh), y, obj_bloco)){
 if(place_meeting(x, y+sign(velv), obj_bloco)){
 	velv =0
 }
+
+/*
+//colisao horizontal bomba
+if(place_meeting(x+(sign(velh)*grid_size), y, obj_bomba)){
+	velh =0
+}
+//colisao vertical bomba
+if(place_meeting(x, y+(sign(velv)*grid_size), obj_bomba)){
+	velv =0
+}*/
 
 //animacao
 if(velh + velv == 0){
