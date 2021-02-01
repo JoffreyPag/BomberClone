@@ -42,5 +42,14 @@ for(var i=0; i<largura_sala; i+=grid_size){
 }
 
 if(!instance_exists(obj_player)){
-	instance_create_layer(grid_size, grid_size, "Player", obj_player)
+	var p1 = instance_create_layer(grid_size, grid_size, "Player", obj_player)
+	/*var p2 = instance_create_layer(largura_sala-(grid_size*2), grid_size, "Player", obj_player)
+	p2.x = largura_sala-(grid_size*2)
+	p2.y = grid_size
+	p2.k_up = ord("W")
+	p2.k_down = ord("S")
+	p2.k_left = ord("A")
+	p2.k_right = ord("D")
+	p2.k_bomb = ord("E")
+	p2.image_blend = c_navy*/
 }

@@ -18,17 +18,17 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_part","path":"objects/obj_part/obj_part.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"parent":{"name":"obj_part","path":"objects/obj_part/obj_part.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_player_pai","path":"objects/obj_player_pai/obj_player_pai.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_player_pai","path":"objects/obj_player_pai/obj_player_pai.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Efeitos",
-    "path": "folders/Objects/Efeitos.yy",
+    "name": "Player",
+    "path": "folders/Objects/Player.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_part",
+  "name": "obj_player_pai",
   "tags": [],
   "resourceType": "GMObject",
 }

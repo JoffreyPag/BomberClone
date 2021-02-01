@@ -7,10 +7,7 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_player_pai",
-    "path": "objects/obj_player_pai/obj_player_pai.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -30,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Player",
-    "path": "folders/Objects/Player.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_player",

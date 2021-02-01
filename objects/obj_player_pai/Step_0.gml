@@ -1,7 +1,3 @@
-event_inherited()
-
-/*
-
 if(!morto){
 	var up, down, left, right, solta_bomba
 
@@ -11,10 +7,10 @@ if(!morto){
 	//movimentação em grid
 	//checando se o x e y sao multiplos de 32
 	if(round(x) mod grid_size == 0 and round(y) mod grid_size == 0){
-		left = keyboard_check(vk_left)
-		right = keyboard_check(vk_right)
-		up = keyboard_check(vk_up)
-		down = keyboard_check(vk_down)
+		left = keyboard_check(k_left)
+		right = keyboard_check(k_right)
+		up = keyboard_check(k_up)
+		down = keyboard_check(k_down)
 	
 		if(left) face = 2
 		if(right) face = 0
@@ -26,7 +22,7 @@ if(!morto){
 	
 	}
 
-	solta_bomba = keyboard_check_released(vk_space)
+	solta_bomba = keyboard_check_pressed(k_bomb)
 
 	if(solta_bomba && bombas > 0){
 		var bomba = instance_create_layer((round(x) div grid_size)*grid_size,
@@ -61,7 +57,7 @@ if(!morto){
 	if(place_meeting(x, y+(sign(velv)*grid_size), obj_bomba)){
 		velv =0
 	}*/
-/*
+
 	//animacao
 	if(velh + velv == 0){
 		image_index = 0
@@ -80,8 +76,8 @@ if(!morto){
 	y += velv
 }else{
 	//is dead
+	image_speed = 0
 	image_blend = c_red
 	alpha = lerp(alpha, .3, .01)
 	image_alpha = alpha	
 }
-*/

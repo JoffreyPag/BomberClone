@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Efeitos",
+    "path": "folders/Objects/Efeitos.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_explosao",
