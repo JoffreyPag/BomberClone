@@ -19,7 +19,7 @@ if(col){
 		instance_destroy()
 		part = false
 	}
-	potencia = -1
+	potencia -= 2
 }
 
 if(part){
@@ -28,7 +28,8 @@ if(part){
 }
 
 //colidindo com o player
-if(instance_place(x,y,obj_player)){
-	game_restart()
+var playercol = instance_place(x,y,obj_player)
+if(playercol){
+	playercol.morto = true
 }
 
