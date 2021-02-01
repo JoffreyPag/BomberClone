@@ -1,4 +1,10 @@
 /// @description gerando o mapa
+
+numero_de_jogadores = 0
+for(var i=0; i<array_length(global.jogadores);i++){
+	if(global.jogadores[i]) numero_de_jogadores++
+}
+
 grid_size = 32
 randomise()
 
@@ -43,13 +49,16 @@ for(var i=0; i<largura_sala; i+=grid_size){
 
 if(!instance_exists(obj_player)){
 	var p1 = instance_create_layer(grid_size, grid_size, "Player", obj_player)
+	scr_define_controle(p1, players.p1)
 	/*var p2 = instance_create_layer(largura_sala-(grid_size*2), grid_size, "Player", obj_player)
 	p2.x = largura_sala-(grid_size*2)
 	p2.y = grid_size
-	p2.k_up = ord("W")
-	p2.k_down = ord("S")
-	p2.k_left = ord("A")
-	p2.k_right = ord("D")
-	p2.k_bomb = ord("E")
 	p2.image_blend = c_navy*/
+}
+
+//criando o segundo player
+if(global.jogadores[1]){
+	var p2 = instance_create_layer(largura_sala-(grid_size*2), altura_sala-(grid_size*2), "Player", obj_player)
+	scr_define_controle(p2, players.p2)
+	p2.image_blend = c_yellow
 }

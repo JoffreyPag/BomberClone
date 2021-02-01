@@ -7,10 +7,10 @@ if(!morto){
 	//movimentação em grid
 	//checando se o x e y sao multiplos de 32
 	if(round(x) mod grid_size == 0 and round(y) mod grid_size == 0){
-		left = keyboard_check(k_left)
-		right = keyboard_check(k_right)
-		up = keyboard_check(k_up)
-		down = keyboard_check(k_down)
+		up = keyboard_check(controles[0])
+		down = keyboard_check(controles[1])
+		left = keyboard_check(controles[2])
+		right = keyboard_check(controles[3])
 	
 		if(left) face = 2
 		if(right) face = 0
@@ -22,7 +22,7 @@ if(!morto){
 	
 	}
 
-	solta_bomba = keyboard_check_pressed(k_bomb)
+	solta_bomba = keyboard_check_pressed(controles[4])
 
 	if(solta_bomba && bombas > 0){
 		var bomba = instance_create_layer((round(x) div grid_size)*grid_size,
@@ -80,4 +80,8 @@ if(!morto){
 	image_blend = c_red
 	alpha = lerp(alpha, .3, .01)
 	image_alpha = alpha	
+	if(avisar){
+		avisar = false
+		alarm[0] = room_speed*2
+	}
 }

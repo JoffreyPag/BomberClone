@@ -1,12 +1,13 @@
 event_inherited()
 
 //meus controles
+/*
 k_up = vk_up
 k_down = vk_down
 k_left = vk_left
 k_right = vk_right
 k_bomb = vk_space
-
+*/
 /*
 grid_size = 32
 morto = false
