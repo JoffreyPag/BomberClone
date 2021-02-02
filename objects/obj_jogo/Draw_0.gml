@@ -1,7 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-if(room = rm_inicio){
+if(room == rm_inicio){
 	var n = array_length(opcoes)
 	var h = string_height(opcoes[0])*1.5
 
@@ -49,4 +46,25 @@ if(room = rm_inicio){
 		draw_set_halign(-1)
 		draw_set_font(-1)
 	}
+}
+
+//configurando os controles
+if(room == rm_control){
+	draw_set_font(fnt_inicio);
+	draw_set_halign(fa_top);
+	draw_set_halign(fa_left);
+	draw_set_color(c_red);
+	
+	if(keyboard_check_pressed(vk_up)) sel_p --;
+	if(keyboard_check_pressed(vk_down))sel_p ++;
+	
+	if(sel_p >= array_length(opcoes2)) sel_p = 0;
+	if(sel_p < 0) sel_p = array_length(opcoes2)-1;
+	
+	show_debug_message(opcoes2[sel_p]);
+	draw_text(64, 64, opcoes2[sel_p]);
+	
+	//draw_set_halign(-1)
+	//draw_set_font(-1)
+	
 }

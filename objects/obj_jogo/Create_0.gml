@@ -21,6 +21,18 @@ scr_insere_controle(players.p1, vk_up, vk_down, vk_left, vk_right, vk_space)
 scr_insere_controle(players.p2, ord("W"), ord("S"), ord("A"),  ord("D"), ord("E"))
 
 //controles playr 3
+//TODO
 //controles playr 4
+//TODO
 
+//variaveis de selecao ao player
+opcoes2 = ["1 Player", "2 Players", "3 Players", "4 Players"]
+topo = true
+sel_p = 0
 
+//variaveis de selecao dos controles dos players
+opcoes3 = ["UP", "DOWN", "LEFT", "RIGHT", "BOMB", "OK"]
+sel_c = 0
+escolha_t = false
+teclas = [0,0,0,0,0,0]
+cor3 = c_white

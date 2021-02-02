@@ -26,7 +26,8 @@ if(enter and not escolha){
 			trans.destino = Room1
 		break;
 		case 4:
-			escolha = false
+			var trans = instance_create_layer(x,y, "Transition", obj_tran)	
+			trans.destino = rm_control
 		break;
 	}
 }

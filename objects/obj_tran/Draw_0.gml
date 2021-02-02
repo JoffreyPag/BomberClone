@@ -7,5 +7,5 @@ draw_set_alpha(alpha)
 draw_set_color(c_black)
 draw_rectangle(-50,-50,x2, y2, false)
 
-draw_set_alpha(-1)
+draw_set_alpha(1)
 draw_set_color(c_white)
