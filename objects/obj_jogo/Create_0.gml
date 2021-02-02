@@ -2,7 +2,7 @@
 opcoes = ["1 Player", "2 Players", "3 Players", "4 Players", "Controles"]
 cor = c_white
 cor2 = c_black
-
+escolha = false
 sel = 0
 espaco = 0
 

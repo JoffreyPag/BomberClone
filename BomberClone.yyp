@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"obj_tran","path":"objects/obj_tran/obj_tran.yy",},"order":5,},
     {"id":{"name":"spr_bloco","path":"sprites/spr_bloco/spr_bloco.yy",},"order":0,},
     {"id":{"name":"obj_explosao","path":"objects/obj_explosao/obj_explosao.yy",},"order":0,},
     {"id":{"name":"obj_player_pai","path":"objects/obj_player_pai/obj_player_pai.yy",},"order":0,},
