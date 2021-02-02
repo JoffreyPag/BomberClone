@@ -1,4 +1,12 @@
-global.jogadores = [true, true, false, false]
+
+opcoes = ["1 Player", "2 Players", "3 Players", "4 Players", "Controles"]
+cor = c_white
+cor2 = c_black
+
+sel = 0
+espaco = 0
+
+global.jogadores = [true, false, false, false]
 
 //criando a aestrutura de dados para os controles
 enum players{p1,p2,p3,p4}

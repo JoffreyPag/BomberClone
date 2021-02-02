@@ -9,6 +9,7 @@
     {"id":{"name":"scr_define_controle","path":"scripts/scr_define_controle/scr_define_controle.yy",},"order":0,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
     {"id":{"name":"spr_player_dir","path":"sprites/spr_player_dir/spr_player_dir.yy",},"order":2,},
+    {"id":{"name":"rm_inicio","path":"rooms/rm_inicio/rm_inicio.yy",},"order":0,},
     {"id":{"name":"spr_player_esq","path":"sprites/spr_player_esq/spr_player_esq.yy",},"order":3,},
     {"id":{"name":"spr_bomba","path":"sprites/spr_bomba/spr_bomba.yy",},"order":0,},
     {"id":{"name":"spr_player_mask","path":"sprites/spr_player_mask/spr_player_mask.yy",},"order":4,},
@@ -20,8 +21,10 @@
     {"id":{"name":"spr_explosao","path":"sprites/spr_explosao/spr_explosao.yy",},"order":1,},
     {"id":{"name":"spr_player_down","path":"sprites/spr_player_down/spr_player_down.yy",},"order":1,},
     {"id":{"name":"spr_player_up","path":"sprites/spr_player_up/spr_player_up.yy",},"order":0,},
+    {"id":{"name":"fnt_inicio","path":"fonts/fnt_inicio/fnt_inicio.yy",},"order":0,},
+    {"id":{"name":"spr_back","path":"sprites/spr_back/spr_back.yy",},"order":3,},
     {"id":{"name":"obj_power_up","path":"objects/obj_power_up/obj_power_up.yy",},"order":2,},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
+    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":1,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -37,6 +40,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rm_inicio","path":"rooms/rm_inicio/rm_inicio.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
