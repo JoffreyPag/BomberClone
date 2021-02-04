@@ -56,6 +56,7 @@ if(room == rm_control){
 	draw_set_halign(fa_top);
 	draw_set_halign(fa_left);
 	
+//-------------------------------------------------CONTROLE---------------------------------------------------------
 	if(topo){
 		//trocando o player que tera o controle mudado
 		if(keyboard_check_pressed(vk_left)) sel_p --;
@@ -77,6 +78,14 @@ if(room == rm_control){
 			teclas[i] = global.controle_players[# sel_p, i]
 		}
 	
+		//VOLTA PRA ROOM PRINCIPAL
+		if(keyboard_check_pressed(vk_escape)){
+			//reseta as variaveis para poder voltar a selecionar quando na room inicio
+			escolha = false
+			sel = 0
+			var trans = instance_create_layer(x,y, "Transition", obj_tran)	
+			trans.destino = rm_inicio
+		}
 	}else{
 		//nao esta escolhendo a tecla, apenas navegando	
 		if(!escolha_t){
@@ -97,6 +106,13 @@ if(room == rm_control){
 					escolha_t = true
 				}else{
 					//esta no ok
+					//salva as teclas globais
+					for(var i=0; i<array_length(teclas)-1 ; i++){
+						global.controle_players[# sel_p, i] = teclas[i]
+						show_debug_message(string(global.controle_players[# sel_p, i]))
+					}
+					topo = true
+					sel_c = 0
 				}
 			}
 		}else{
@@ -104,18 +120,18 @@ if(room == rm_control){
 			var k_atual = 0
 			k_atual = keyboard_key
 			if(k_atual != 0 and k_atual != vk_enter){
+				opcoes3[sel_c] = scr_convert_tecla(k_atual)
+				teclas[sel_c] = k_atual
 				escolha_t = false
 			}
-			//se pressionar esc cancela
-			if(keyboard_check_pressed(vk_escape)){
+			//se pressionar enter dnv cancela
+			if(keyboard_check_pressed(vk_enter)){
 				escolha_t = false
 			}
 		}
-		
 	}
 	
-	
-	
+//----------------------------------------------- EXIBICAO -----------------------------------------------------
 	//se estiver selecionando o player a cor fica vermelha, se nao branca
 	if(topo){
 		draw_set_color(c_red)
