@@ -31,7 +31,6 @@ if(room == rm_inicio){
 			espaco = 0
 		}
 		
-		
 		draw_set_font(fnt_inicio)
 		draw_set_halign(fa_center)
 	
@@ -50,19 +49,97 @@ if(room == rm_inicio){
 
 //configurando os controles
 if(room == rm_control){
+	
+	//var n = array_length(opcoes3)
+	
 	draw_set_font(fnt_inicio);
 	draw_set_halign(fa_top);
 	draw_set_halign(fa_left);
-	draw_set_color(c_red);
 	
-	if(keyboard_check_pressed(vk_up)) sel_p --;
-	if(keyboard_check_pressed(vk_down))sel_p ++;
+	if(topo){
+		//trocando o player que tera o controle mudado
+		if(keyboard_check_pressed(vk_left)) sel_p --;
+		if(keyboard_check_pressed(vk_right))sel_p ++;
 	
-	if(sel_p >= array_length(opcoes2)) sel_p = 0;
-	if(sel_p < 0) sel_p = array_length(opcoes2)-1;
+		if(sel_p >= array_length(opcoes2)) sel_p = 0;
+		if(sel_p < 0) sel_p = array_length(opcoes2)-1;
 	
-	show_debug_message(opcoes2[sel_p]);
-	draw_text(64, 64, opcoes2[sel_p]);
+		//seleciona o player para ir pra o controle da troca das keys
+		if(keyboard_check_pressed(vk_enter)){
+			topo = false
+			escolha_t = false
+		}
+			
+		for(var i=0; i<array_length(opcoes3)-1; i++){
+			//aqui é pra ser so o texto memso
+			opcoes3[i] = scr_convert_tecla(global.controle_players[# sel_p, i]) 
+			//aqui fica o codigo da tecla de verdade
+			teclas[i] = global.controle_players[# sel_p, i]
+		}
+	
+	}else{
+		//nao esta escolhendo a tecla, apenas navegando	
+		if(!escolha_t){
+			//navegando no submenu das teclas do player selecionado
+			if(keyboard_check_pressed(vk_up)) sel_c --;
+			if(keyboard_check_pressed(vk_down))sel_c ++;
+			if(sel_c >= array_length(opcoes3)) sel_c = 0;
+			if(sel_c < 0) sel_c = array_length(opcoes3)-1;
+			
+			//se pressionar o esc sai do submenu e volta pra selecao do player
+			if(keyboard_check_pressed(vk_escape)) topo = true
+			
+			//esta escolhendo uma tecla especifica
+			if(keyboard_check_pressed(vk_enter)){
+				//checa se esta em um campo de tecla e nao no ok
+				if(sel_c < array_length(opcoes3)-1){
+					//esta em um campo de tecla
+					escolha_t = true
+				}else{
+					//esta no ok
+				}
+			}
+		}else{
+			//neste momento esta escolhendo uma tecla para o campo que esta selecionado
+			var k_atual = 0
+			k_atual = keyboard_key
+			if(k_atual != 0 and k_atual != vk_enter){
+				escolha_t = false
+			}
+			//se pressionar esc cancela
+			if(keyboard_check_pressed(vk_escape)){
+				escolha_t = false
+			}
+		}
+		
+	}
+	
+	
+	
+	//se estiver selecionando o player a cor fica vermelha, se nao branca
+	if(topo){
+		draw_set_color(c_red)
+	}else{
+		draw_set_color(c_white)
+	}
+	//escreve qual player que esta mostrando as teclas
+	draw_text(room_width/4, room_height/7, opcoes2[sel_p]);
+	draw_set_color(c_white)
+	
+	//mudando as cores para saber  que estou selecionando
+	for(var i=0; i<array_length(opcoes3); i++){
+		if(sel_c == i and not topo){
+			if(escolha_t){
+				draw_set_color(c_lime)
+			}else{
+				draw_set_color(c_red)
+			}
+		}else{
+			draw_set_color(c_white)
+		}
+		//escrevendo qual tecla em ordem
+		draw_text(room_width/1.75, (room_height/3.3) + (i*60), opcoes3[i])
+	}	
 	
 	//draw_set_halign(-1)
 	//draw_set_font(-1)

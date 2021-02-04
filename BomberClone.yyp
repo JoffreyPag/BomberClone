@@ -19,6 +19,7 @@
     {"id":{"name":"obj_jogo","path":"objects/obj_jogo/obj_jogo.yy",},"order":4,},
     {"id":{"name":"obj_part","path":"objects/obj_part/obj_part.yy",},"order":1,},
     {"id":{"name":"spr_control","path":"sprites/spr_control/spr_control.yy",},"order":4,},
+    {"id":{"name":"scr_convert_tecla","path":"scripts/scr_convert_tecla/scr_convert_tecla.yy",},"order":2,},
     {"id":{"name":"obj_mapa","path":"objects/obj_mapa/obj_mapa.yy",},"order":1,},
     {"id":{"name":"scr_insere_controle","path":"scripts/scr_insere_controle/scr_insere_controle.yy",},"order":1,},
     {"id":{"name":"spr_explosao","path":"sprites/spr_explosao/spr_explosao.yy",},"order":1,},
