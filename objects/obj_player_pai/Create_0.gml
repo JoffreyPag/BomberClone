@@ -1,6 +1,6 @@
 grid_size = 32
 morto = false
-estado = "movendo"
+
 vel = 1.6
 velh = 0
 velv = 0

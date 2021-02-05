@@ -1,5 +1,9 @@
 if(!morto){
-
+	//matando o player
+	var player_pai = instance_place(x,y, obj_player_pai)
+	if(player_pai){
+		player_pai.morto = true
+	}
 	//movimentação em grid
 	//checando se o x e y sao multiplos de 32
 	if(round(x) mod grid_size == 0 and round(y) mod grid_size == 0){
@@ -31,21 +35,11 @@ if(!morto){
 				}
 			}
 		}
-	
 	}
 	
 	//impedindo movimento diagonal
 	if(velh != 0 and velv !=0){
 		velv = 0
-	}
-
-	//colisao horizontal
-	if(place_meeting(x+sign(velh), y, obj_bloco)){
-		velh *= -1
-	}
-	//colisao vertical
-	if(place_meeting(x, y+sign(velv), obj_bloco)){
-		velv *= -1
 	}
 		
 	//colisao horizontal
@@ -66,7 +60,15 @@ if(!morto){
 		velv *= -1
 	}	
 	
-
+	//colisao horizontal
+	if(place_meeting(x+sign(velh), y, obj_bloco)){
+		velh *= -1
+	}
+	//colisao vertical
+	if(place_meeting(x, y+sign(velv), obj_bloco)){
+		velv *= -1
+	}
+	
 	//animacao
 	if(velh + velv == 0){
 		image_index = 0
@@ -94,12 +96,6 @@ if(!morto){
 		avisar = false
 		alarm[0] = room_speed*5
 	}
-}
-
-//matando o player
-var player_pai = instance_place(x,y, obj_player_pai)
-if(player_pai){
-	player_pai.morto = true
 }
 
 //colidindo com a explosao

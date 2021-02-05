@@ -70,3 +70,24 @@ if(global.jogadores[3]){
 	scr_define_controle(p4, players.p2)
 	p4.image_blend = c_fuchsia
 }
+
+var n_inimigos = irandom_range(4,8)
+//criando inimigos caso o jogo seja singleplayer
+if(global.jogadores[1] == false){
+	for(var i=3; i<largura_sala; i++){
+		for(var j=3; j<altura_sala; j++){
+			//checando se pode criar o oinimigo
+			if(n_inimigos > 0){
+				var cha = irandom(100)
+				if(cha>50){
+					//checa se ha blocos
+					if(position_empty(i*grid_size,j*grid_size)){
+						instance_create_layer
+						(i*grid_size, j*grid_size, "Level", obj_inimigo)
+						n_inimigos--
+					}
+				}
+			}
+		}
+	}
+}
