@@ -18,6 +18,7 @@
     {"id":{"name":"spr_inimigo_down","path":"sprites/spr_inimigo_down/spr_inimigo_down.yy",},"order":0,},
     {"id":{"name":"spr_bomba","path":"sprites/spr_bomba/spr_bomba.yy",},"order":0,},
     {"id":{"name":"spr_player_mask","path":"sprites/spr_player_mask/spr_player_mask.yy",},"order":4,},
+    {"id":{"name":"spr_pause","path":"sprites/spr_pause/spr_pause.yy",},"order":5,},
     {"id":{"name":"obj_bomba","path":"objects/obj_bomba/obj_bomba.yy",},"order":1,},
     {"id":{"name":"obj_jogo","path":"objects/obj_jogo/obj_jogo.yy",},"order":4,},
     {"id":{"name":"obj_part","path":"objects/obj_part/obj_part.yy",},"order":1,},

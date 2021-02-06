@@ -161,3 +161,59 @@ if(room == rm_control){
 	//draw_set_font(-1)
 	
 }
+
+if(room == Room1){
+	//fazendo o pause
+	if(pause){
+		
+		//checando se a surface existe
+		if(!surface_exists(surf)){
+			//recriando a surface
+			surf = surface_create(view_get_wport(view_camera[0]), view_get_hport(view_camera[0]));
+			surface_set_target(surf)
+			draw_clear_alpha(c_black, 0)
+			surface_reset_target()
+		}else{
+			//se existe
+			draw_surface_stretched(surf,0,0,room_width, room_height)
+			
+			//desenhando um retangulo escuro na frente dela
+			draw_set_alpha(.5)
+			draw_set_color(c_black)
+			draw_rectangle(0,0, room_width, room_height, false)
+			draw_set_alpha(1)
+			draw_set_color(c_white)
+		}
+		
+		var n = array_length(opcoes_pause)
+		if(keyboard_check_pressed(vk_down)) sel_pause ++;
+		if(keyboard_check_pressed(vk_up)) sel_pause --;
+		if(sel_pause > n-1) sel_pause = 0;
+		if(sel_pause < 0) sel_pause = array_length(opcoes_pause)-1;
+	
+		if(keyboard_check_pressed(vk_enter)){
+			switch(sel_pause){
+				case 0:
+					pause = false
+					sel_pause = 0
+				break;
+				case 1:
+					pause = false
+					sel_pause = 0
+					room_restart()
+				break;
+				case 2:
+					//reseta as variaveis para poder voltar a selecionar quando na room inicio
+					pause = false
+					sel_pause = 0
+					escolha = false
+					sel = 0
+					var trans = instance_create_layer(x,y, "Transition", obj_tran)	
+					trans.destino = rm_inicio
+				break;
+			}
+		}		
+		
+	}
+	//nao ta pausado
+}

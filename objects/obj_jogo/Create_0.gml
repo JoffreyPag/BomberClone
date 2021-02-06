@@ -1,5 +1,5 @@
 
-opcoes = ["1 Player", "2 Players", "3 Players", "4 Players", "Controles"]
+opcoes = ["1 Player", "2 Players", "3 Players", "4 Players", "Controles", "Fechar"]
 cor = c_white
 cor2 = c_black
 escolha = false
@@ -36,3 +36,10 @@ sel_c = 0
 escolha_t = false
 teclas = [0,0,0,0,0,0]
 cor3 = c_white
+
+pause = false
+//superficie quando pausa o jogo
+surf = 0
+
+opcoes_pause = ["Voltar", "Reiniciar", "Sair"]
+sel_pause = 0
