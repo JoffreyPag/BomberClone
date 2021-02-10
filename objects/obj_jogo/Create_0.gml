@@ -43,3 +43,5 @@ surf = 0
 
 opcoes_pause = ["Voltar", "Reiniciar", "Sair"]
 sel_pause = 0
+
+musica = 0

@@ -1,5 +1,8 @@
 //criar pros 4 lados
 if(mae){
+	//tocando o som da explosao
+	var snd = audio_play_sound(snd_explo, 5, false)
+	audio_sound_pitch(snd, random_range(.5, 2))
 	if(potencia > 0){
 		repeat(4){
 			var xx = lengthdir_x(grid_size, sentido)

@@ -41,6 +41,11 @@ if(room = rm_inicio){
 		pause = !pause
 	}
 	if(pause){
+		//deixando a musica do jogo mais baixa
+		if(musica != 0){
+			audio_sound_gain(musica, .1, room_speed*2)
+		}
+		
 		//criando a superficie
 		if(surf == 0){
 			surf = surface_create(view_get_wport(view_camera[0]), view_get_hport(view_camera[0]));
@@ -54,6 +59,12 @@ if(room = rm_inicio){
 		//desativando tudo
 		instance_deactivate_all(true)
 	}else{
+		
+		//voltando musica original
+		if(musica != 0){
+			audio_sound_gain(musica, .5, room_speed*2)
+		}
+		
 		//acabar a superficie
 		if(surf != 0){
 			surface_free(surf)

@@ -1,7 +1,11 @@
 /// @description reiniciando quando todos os players estiverem mortos
 
 if(numero_de_jogadores <= 0){
-	room_restart()
+	if(instance_exists(obj_jogo)){
+		if(!obj_jogo.pause) obj_jogo.pause = true
+	}
+	
+	//room_restart()
 }
 var click = mouse_check_button_released(mb_left)
 if(click){
